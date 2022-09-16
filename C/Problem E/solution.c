@@ -6,9 +6,9 @@ int main(){
     scanf("%d", &i);
 
     if (i%2 == 0 ){
-        printf("EVEN");
+        printf("EVEN\n");
     } else{
-        printf("ODD");
+        printf("ODD\n");
     }
 
     return 0;
