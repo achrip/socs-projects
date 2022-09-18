@@ -3,7 +3,7 @@
 int main (){
     int i, j, k, l, m; 
 
-    scanf("%d%d", &i, &j);
+    scanf("%d %d", &i, &j);
      m = j-i; 
 
     int p[m]; 
