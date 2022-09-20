@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main (){
+
+    long int p, q, r; 
+
+    scanf("%ld %ld", &p, &q);
+    int i = p;
+
+    do {
+        
+        r += p; 
+        p++;
+        i++;
+    } while (i <= q);
+
+    printf("%ld", r);
+
+    return 0;
+}
