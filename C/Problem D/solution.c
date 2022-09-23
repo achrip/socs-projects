@@ -1,22 +1,22 @@
 #include<stdio.h>
 
 int main (){
-    int i, j, k, l, m; 
+    long i, j, k, l, m; 
 
-    scanf("%d %d", &i, &j);
+    scanf("%ld %ld", &i, &j);
      m = j-i; 
 
-    int p[m]; 
+    long p[m]; 
+    l = 0; //to assure nothing goes wrong, explicitly
+           //declare that value of l is zero
 
-    for (k=0; k<=m; k++ ){
+    for (k=0; k<=m; k++ ){ 
+    //explicitly defer the loop statements so nothing goes south
         p[k] = i; 
         i++;
-    }
-
-    for (k=0; k<=m; k++){
         l += p[k];
     }
-    printf("%d\n", l);
+    printf("%ld\n", l);
 
     return 0; 
 }
