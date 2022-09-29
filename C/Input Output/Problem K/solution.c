@@ -4,15 +4,13 @@ int main(){
     int i, j;
     char c[100];
 
-    scanf("%s", c);
+    scanf("%[^\n]s", c);
     getchar();
 
     do{
-        scanf("%d", &i);
+        scanf("%d %d", &i, &j);
         getchar();
     } while (!(i > 0 && i <= 99999999));
-
-    scanf("%d", &j);
     
     printf("Name: %s\n", c);
     printf("NIS: %d\n", i);
