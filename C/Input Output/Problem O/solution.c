@@ -5,6 +5,6 @@ int main(){
 
     scanf("%s %s %s", word1, word2, word3);
 
-    printf("%s %s %s", word3, word2, word1);
+    printf("%s %s %s\n", word3, word2, word1);
     return 0;
 }
