@@ -16,10 +16,10 @@ int main(){
     
     scanf("%c %d", &class, &num);
 
-    printf("ID\t: %s\n", id);
+    printf("ID\t\t: %s\n", id);
     printf("Name\t: %s\n", name);
     printf("Class\t: %c\n", class);
-    printf("Num\t: %d\n", num);
+    printf("Num\t\t: %d\n", num);
 
     return 0;
 }
