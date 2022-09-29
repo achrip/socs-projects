@@ -9,7 +9,7 @@ int main (){
     printf("#include <stdio.h>\n");
     printf("int main()\n");
     printf("{\n");
-    printf("\t printf(\"%%s\\n\",\"%s\")\n", str);
+    printf("\t printf(\"%%s\\n\",\"%s\");\n", str);
     printf("\t return 0;\n");
     printf("}\n");
 
