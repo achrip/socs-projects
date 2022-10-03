@@ -1,20 +1,18 @@
 #include <stdio.h>
 
 int main(){
-    int i, j;
-    char c[100];
+    int i;
+    char c[100], nim[8];
 
     scanf("%[^\n]s", c);
     getchar();
 
-    do{
-        scanf("%d %d", &i, &j);
-        getchar();
-    } while (!(i > 0 && i <= 99999999));
+    scanf("%s %d", nim, &i);
+    getchar();
     
     printf("Name: %s\n", c);
-    printf("NIS: %d\n", i);
-    printf("Age: %d\n", j);
+    printf("NIS: %s\n", nim);
+    printf("Age: %d\n", i);
 
     return 0;
 }

@@ -1,25 +1,22 @@
 #include <stdio.h>
-#include <string.h>
-#define id_size 10
 
 int main(){ 
-    char id[id_size], name[100], class;
-    int num, size;
-
-    do{    
-        scanf("%s", id);
-        getchar();
-    }while(strlen(id) != id_size);
-        
-    scanf("%[^\n]s", name);
-    getchar();
+    char id[10], name[100], class;
+    int num;
     
-    scanf("%c %d", &class, &num);
+    scanf("%s\n", id);
+    //getchar();
+        
+    scanf("%[^\n]", name);
+    //getchar();
+    
+    scanf("%*c %c %d", &class, &num);
+    getchar();
 
-    printf("ID\t\t: %s\n", id);
-    printf("Name\t: %s\n", name);
-    printf("Class\t: %c\n", class);
-    printf("Num\t\t: %d\n", num);
+    printf("Id    : %s\n", id);
+    printf("Name  : %s\n", name);
+    printf("Class : %c\n", class);
+    printf("Num   : %d\n", num);
 
     return 0;
 }
