@@ -1,33 +1,72 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 void main(){
     int rep, candy, cash;
-    unsigned int price[11000], bought[11000], tmp[11000]; 
+    int *price, *bought; 
+
+    price=(int*)calloc(11000,sizeof(int));
+    bought=(int*)calloc(11000, sizeof(int));
 
     scanf("%d", &rep);
     getchar();
 
     for (int i=0; i<rep; i++){
-        bought[i]=0;
         scanf("%d %d", &candy, &cash);
         getchar();
 
+        // append each candy price to price array index
         for (int j=0; j<candy; j++){
             scanf("%d", &price[j]);
             getchar();
+            // printf("harga permen %d = %d\n", j, price[j]);
         }
 
-        for (int j=0; j<candy || j<=cash; j++){
-            if (cash>=price[j]){
-                cash -= price[j];
+        // size_t x=sizeof(price);
+        // // reallocate *price size
+        // for (int j=0; j<x; j++){
+        //     if (price[j]==0){
+        //         price=realloc (price, j-1);
+        //     }
+        // }
+
+        int cheapest=1000000; // create a variable to store cheapest candy
+        // finds the cheapest candy money can buy
+        for (int j=0; j<candy; j++){
+            if (cheapest>=price[j]){
+                cheapest = price[j];
+            }
+            // printf("cheapest = %d\n", cheapest);
+        }
+        
+        do{
+            if (cash<cheapest){
+                break;
+            } else{
+                cash -= cheapest;
                 bought[i]++;
             }
-        }
+        } while (cash >=cheapest);
+        
+
+        // for (int j=0; j<candy || j<=cash; j++){
+        //     int k=0;
+        //     do
+        //     {
+        //         cash -= price[k];
+        //         bought[j]++;
+        //         k++;
+        //     } while (cash>=price[k]);
+            
+        
     }
-    
+
+    free(price);
     for (int j=0; j<rep; j++){
         printf("Case #%d: %d\n", j+1, bought[j]);
     }
+    free(bought);
     
     
 
