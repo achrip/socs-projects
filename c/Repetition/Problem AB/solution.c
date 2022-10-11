@@ -98,23 +98,43 @@ void main(){
         getchar();
         threw[i]=0; tmp1[i]=0; tmp2[i]=0; tmp3[i]=0; tmp4[i]=0; 
 
-        for (int j=0; j<toys; j++){
-            tmp1[j]=rm1*j+1; 
-            tmp2[j]=rm2*j+1; 
-            tmp3[j]=rm3*j+1; 
-            tmp4[j]=rm4*j+1; 
-            
-            if (tmp1[j]>toys||tmp2[j]>toys||tmp3[j]>toys||tmp4[j]>toys){
+        for (int j=1; j<=toys; j++){
+            tmp1[j-1]=j*rm1;
+            tmp2[j-1]=j*rm2;
+            tmp3[j-1]=j*rm3;
+            tmp4[j-1]=j*rm4;
+
+            if (tmp1[j-1]<tmp2[j-1]&&tmp1[j-1]<tmp3[j-1]&&tmp1[j-1]<tmp4[j-1]){
+                int lowest=tmp1[j-1]; 
+                if (lowest>toys){
                 break; 
             }
-
-            if (tmp1[i]==tmp2[j]){
-                tmp2[j]=NULL; 
+            } else if (tmp2[j-1]<tmp1[j-1]&&tmp2[j-1]<tmp2[j-1]&&tmp2[j-1]<tmp3[j-1]){
+                int lowest=tmp2[j-1];
+                if (lowest>toys){
+                break; 
+            } 
+            } else if (tmp3[j-1]<tmp1[j-1]&&tmp3[j-1]<tmp2[j-1]&&tmp3[j-1]<tmp4[j-1]){
+                int lowest=tmp3[j-1]; 
+                if (lowest>toys){
+                break; 
             }
-        }
-    }
+            } else if (tmp4[j-1]<tmp1[j-1]&&tmp4[j-1]<tmp2[j-1]&&tmp4[j-1]<tmp3[j-1]){
+                int lowest=tmp4[j-1]; 
+                if (lowest>toys){
+                break; 
+            }
+            }
+            
+            // if (tmp1[i]==tmp2[j]){
+            //     tmp2[j]=NULL; 
+            // } else if (tmp)
     
-    for (int i=0; i<rep; i++){
-        printf("Case #%d: %d\n", i+1, threw[i]);
+            // }
+
+            printf("%d %d %d %d\n", tmp1[j-1], tmp2[j-1], tmp3[j-1], tmp4[j-1]);
+            
+
+        }
     }
 }
