@@ -80,12 +80,70 @@
 //     return 0;
 // }
 
-#include <stdio.h>  
+// #include <stdio.h>  
+
+// void main(){
+//     int rep, toys, rm1, rm2, rm3, rm4;
+//     int p, q, r, s;
+//     int tmp1[10001], tmp2[10001], tmp3[10001], tmp4[10001], threw[101];
+
+//     // scans how many cases there will be
+//     scanf("%d", &rep); 
+//     getchar();
+
+//     // starts an input loop for each case while also calculating 
+//     // if a toy is thrown away or not
+//     for (int i=0; i<rep; i++){
+//         scanf("%d %d %d %d %d", &toys, &rm1, &rm2, &rm3, &rm4);
+//         getchar();
+//         threw[i]=0; tmp1[i]=0; tmp2[i]=0; tmp3[i]=0; tmp4[i]=0; 
+
+//         for (int j=1; j<=toys; j++){
+//             tmp1[j-1]=j*rm1;
+//             tmp2[j-1]=j*rm2;
+//             tmp3[j-1]=j*rm3;
+//             tmp4[j-1]=j*rm4;
+
+//             if (tmp1[j-1]<tmp2[j-1]&&tmp1[j-1]<tmp3[j-1]&&tmp1[j-1]<tmp4[j-1]){
+//                 int lowest=tmp1[j-1]; 
+//                 if (lowest>toys){
+//                 break; 
+//             }
+//             } else if (tmp2[j-1]<tmp1[j-1]&&tmp2[j-1]<tmp2[j-1]&&tmp2[j-1]<tmp3[j-1]){
+//                 int lowest=tmp2[j-1];
+//                 if (lowest>toys){
+//                 break; 
+//             } 
+//             } else if (tmp3[j-1]<tmp1[j-1]&&tmp3[j-1]<tmp2[j-1]&&tmp3[j-1]<tmp4[j-1]){
+//                 int lowest=tmp3[j-1]; 
+//                 if (lowest>toys){
+//                 break; 
+//             }
+//             } else if (tmp4[j-1]<tmp1[j-1]&&tmp4[j-1]<tmp2[j-1]&&tmp4[j-1]<tmp3[j-1]){
+//                 int lowest=tmp4[j-1]; 
+//                 if (lowest>toys){
+//                 break; 
+//             }
+//             }
+            
+//             // if (tmp1[i]==tmp2[j]){
+//             //     tmp2[j]=NULL; 
+//             // } else if (tmp)
+    
+//             // }
+
+//             printf("%d %d %d %d\n", tmp1[j-1], tmp2[j-1], tmp3[j-1], tmp4[j-1]);
+            
+
+//         }
+//     }
+// }
+
+#include <stdio.h>
 
 void main(){
-    int rep, toys, rm1, rm2, rm3, rm4;
+    int rep, toys, rm1, rm2, rm3, rm4, count[rep]; 
     int p, q, r, s;
-    int tmp1[10001], tmp2[10001], tmp3[10001], tmp4[10001], threw[101];
 
     // scans how many cases there will be
     scanf("%d", &rep); 
@@ -94,47 +152,23 @@ void main(){
     // starts an input loop for each case while also calculating 
     // if a toy is thrown away or not
     for (int i=0; i<rep; i++){
+        count[i]=0;
         scanf("%d %d %d %d %d", &toys, &rm1, &rm2, &rm3, &rm4);
         getchar();
-        threw[i]=0; tmp1[i]=0; tmp2[i]=0; tmp3[i]=0; tmp4[i]=0; 
 
         for (int j=1; j<=toys; j++){
-            tmp1[j-1]=j*rm1;
-            tmp2[j-1]=j*rm2;
-            tmp3[j-1]=j*rm3;
-            tmp4[j-1]=j*rm4;
+            p=j%rm1;
+            q=j%rm2;
+            r=j%rm3;
+            s=j%rm4;
 
-            if (tmp1[j-1]<tmp2[j-1]&&tmp1[j-1]<tmp3[j-1]&&tmp1[j-1]<tmp4[j-1]){
-                int lowest=tmp1[j-1]; 
-                if (lowest>toys){
-                break; 
+            if (p==0||q==0||r==0||s==0){
+                count[i]++;
             }
-            } else if (tmp2[j-1]<tmp1[j-1]&&tmp2[j-1]<tmp2[j-1]&&tmp2[j-1]<tmp3[j-1]){
-                int lowest=tmp2[j-1];
-                if (lowest>toys){
-                break; 
-            } 
-            } else if (tmp3[j-1]<tmp1[j-1]&&tmp3[j-1]<tmp2[j-1]&&tmp3[j-1]<tmp4[j-1]){
-                int lowest=tmp3[j-1]; 
-                if (lowest>toys){
-                break; 
-            }
-            } else if (tmp4[j-1]<tmp1[j-1]&&tmp4[j-1]<tmp2[j-1]&&tmp4[j-1]<tmp3[j-1]){
-                int lowest=tmp4[j-1]; 
-                if (lowest>toys){
-                break; 
-            }
-            }
-            
-            // if (tmp1[i]==tmp2[j]){
-            //     tmp2[j]=NULL; 
-            // } else if (tmp)
-    
-            // }
-
-            printf("%d %d %d %d\n", tmp1[j-1], tmp2[j-1], tmp3[j-1], tmp4[j-1]);
-            
-
         }
+    }
+
+    for (int i=0; i<rep; i++){
+        printf("%d\n", count[i]);
     }
 }
