@@ -1,9 +1,9 @@
 #include <stdio.h>  
 
 int main(){
-    int hits, base_dmg, bonus_dmg;
+    long long int hits, base_dmg, bonus_dmg;
 
-    scanf("%d", &hits); 
+    scanf("%lld", &hits); 
 
     base_dmg=hits*100; 
 
@@ -11,7 +11,7 @@ int main(){
         bonus_dmg+=50*i; 
     }
 
-    printf("%d\n", base_dmg+bonus_dmg);
+    printf("%lld\n", base_dmg+bonus_dmg);
     
     return 0; 
 }
