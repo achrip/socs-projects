@@ -1,9 +1,9 @@
 #include <stdio.h>  
 
 int main(){
-    int hits, base_point, bonus_point;
+    long long int hits, base_point=0, bonus_point=0;
 
-    scanf("%d", &hits); 
+    scanf("%lld", &hits); 
 
     base_point=hits*100; 
 
@@ -11,7 +11,7 @@ int main(){
         bonus_point+=50*i; 
     }
 
-    printf("%d\n", base_point+bonus_point);
+    printf("%lld\n", base_point+bonus_point);
     
     return 0; 
 }

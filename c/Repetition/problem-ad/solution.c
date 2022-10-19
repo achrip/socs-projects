@@ -43,16 +43,17 @@ int main (){
     scanf("%d", &items);
     getchar();
 
-    for (int i=0; i<items; ++i){ 
+    for (int i=0; i<items; ++i){
         count[i]=0;
         scanf("%d", &type[i]);
         getchar(); 
 
-        for (int j=0; type[i]; ++j){
+        for (int j=0; j<items; ++j){
             if (type[i]==type[j]){
                 count[i]++; 
             }
         }
+                printf("count: %d\n", count[i]);
 
         if (count[i]>mode){
             mode=count[i];
