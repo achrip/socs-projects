@@ -53,7 +53,7 @@ int main (){
                 count[i]++; 
             }
         }
-                printf("count: %d\n", count[i]);
+                // printf("count: %d\n", count[i]);
 
         if (count[i]>mode){
             mode=count[i];
