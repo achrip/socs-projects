@@ -4,7 +4,7 @@
 int main(){
     int rep, matrix_dimension, matrix_count=0; 
     long long int matrix[size][size], matrix1[size][size], matrix2[size][size];
-    long long int matrix12[size][size], matrix123[size][size];
+    long long int matrix12[size][size]={0}, matrix123[size][size]={0};
     long long int tmp;
 
     scanf("%d", &rep); 
@@ -21,6 +21,7 @@ int main(){
             }
         }
         //printf("\n");
+        scanf("%*c");
         for (int j=0; j<matrix_dimension; ++j){
             for (int k=0; k<matrix_dimension; ++k){
                 scanf("%lld", &matrix1[j][k]);
@@ -28,6 +29,7 @@ int main(){
             }
         }
         //printf("\n");
+        scanf("%*c");
         for (int j=0; j<matrix_dimension; ++j){
             for (int k=0; k<matrix_dimension; ++k){
                 scanf("%lld", &matrix2[j][k]);
@@ -35,7 +37,8 @@ int main(){
             }
         }
         //printf("\n");
-        tmp=0;
+        // scanf("%*c");
+        // tmp=0;
         for (int j=0; j<matrix_dimension; ++j){
             for (int k=0; k<matrix_dimension; ++k){
                 for (int l=0; l<matrix_dimension; ++l){
@@ -43,7 +46,7 @@ int main(){
                 }
             }
         }
-        tmp=0;
+        // tmp=0;
         for (int j=0; j<matrix_dimension; ++j){
             for (int k=0; k<matrix_dimension; ++k){
                 for (int l=0; l<matrix_dimension; ++l){
