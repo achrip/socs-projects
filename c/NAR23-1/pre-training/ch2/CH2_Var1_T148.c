@@ -5,7 +5,7 @@ struct Stocks {
     double price; 
     char name[1000];
     int index;
-    char label[100]
+    char label[100];
 };
 
 void insert(); 
@@ -17,6 +17,7 @@ void exit();
 int main(){
     int choose;
     struct Stocks stock; 
+    // Stocks nama
 
     printf("1. insert stock\n2. view all stock\n3. delete stock\n4. exit program\n");
     printf(">> ");

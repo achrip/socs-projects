@@ -1,16 +1,23 @@
 #include <stdio.h>
 #define size 55
 
+struct final{
+    char matrix[size][size]; 
+};
+
 int main(){
+    struct final lematrik[size]; 
     int rep, matrix_dimension, matrix_count=0; 
     long long int matrix[size][size], matrix1[size][size], matrix2[size][size];
-    long long int matrix12[size][size]={0}, matrix123[size][size]={0};
     long long int tmp;
 
     scanf("%d", &rep); 
     getchar(); 
 
     for (int i=0; i<rep; ++i){
+
+        long long int matrix12[size][size]={0}, matrix123[size][size]={0};
+
         scanf("%d", &matrix_dimension);
         getchar();
 
@@ -51,6 +58,7 @@ int main(){
             for (int k=0; k<matrix_dimension; ++k){
                 for (int l=0; l<matrix_dimension; ++l){
                     matrix123[j][k] += matrix12[j][l]*matrix2[l][k];
+
                 }
             }
         }
@@ -66,6 +74,7 @@ int main(){
                 }
             }
         }
+
 
     }
 
