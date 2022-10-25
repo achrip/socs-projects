@@ -85,6 +85,17 @@ void settings(){
     printf("'g' - Use Bomb\n\n");
 
     printf("Back to menu ? [press enter]");
-    // if read enter then tralala
+    // read enter then goto menu
 
+}
+
+void manual(){
+    printf("Space Invader\n\n\n");
+
+    printf("The object if the game is, basically, to shoot the invaders with your shooter\nwhile avoiding their shots and preventing an invasion Amassing a high scoree is a further\nobjective and one that must be prioritised against your continued survival.\n\n\n");
+    printf("There is no time limit,\nexcept for the fact that if you do not shoot them all before they reach\nthe bottom of the screen the game ends.\n\n\n");
+    printf("Credit : TinTin Winata\n\n");
+    
+    printf("Back to menu ? [press enter]");
+    // read enter then goto menu
 }

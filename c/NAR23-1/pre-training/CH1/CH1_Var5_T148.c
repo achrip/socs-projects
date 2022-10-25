@@ -8,8 +8,36 @@ int main (){
 
     temp = (side-3)/2;
 
-    for (int i=side/2; i>0; -i){
-        printf("*");
+    for (int i=side; i>0; --i){
+        for (int j=0; j<i; ++j){
+            printf("*"); 
+        }
+        for (int j=i; j<side; ++j){
+            printf(" ");
+        }
+        for (int j=i; j<side; ++j){
+            printf(" ");
+        }
+        for (int j=0; j<i; ++j){
+            printf("*"); 
+        }
+        printf("\n");
+    }
+    
+    for (int i=1; i<side; ++i){
+        for (int j=0; j<=i; ++j){
+            printf("*"); 
+        }
+        for (int j=side-1; j>i; --j){
+            printf(" "); 
+        }
+        for (int j=side-1; j>i; --j){
+            printf(" "); 
+        }
+        for (int j=0; j<=i; ++j){
+            printf("*"); 
+        }
+        printf("\n");
     }
     // for (int i=0; i<side; ++i){ 
     //     printf("*");
@@ -26,10 +54,5 @@ int main (){
     //     printf("\n");
     //     --temp; 
     // }
-
-    for (int i=0; i<side; ++i){
-        printf("*"); 
-    }
-    printf("\n"); 
     return 0;
 }
