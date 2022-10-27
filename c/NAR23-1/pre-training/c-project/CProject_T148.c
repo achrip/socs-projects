@@ -12,7 +12,8 @@ void exit();
 
 int main(){
     int choose; 
-
+    initscr();
+    raw();
     printf("1. NEW GAME\n");
     printf("2. LOAD GAME\n");
     printf("3. SETTING\n");
@@ -25,7 +26,7 @@ int main(){
             newGame();
             break;
         case 2: 
-            loadGame();
+            //loadGame();
             break;
         case 3: 
             settings();
@@ -34,7 +35,7 @@ int main(){
             manual();
             break;
         case 5: 
-            exit();
+            //exit();
             break;
         default : 
             break;

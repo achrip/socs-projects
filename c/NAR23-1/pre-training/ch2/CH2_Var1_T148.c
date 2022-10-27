@@ -99,11 +99,14 @@ void insert(){
     stock[i].index=(stock[i].price/(((rand()%37)+1)*2))*((rand()%100)+1);
 
     if (stock[i].index<=2853 && stock[i].index>=1){
-        stock[i].label = "small cap";
+        // stock[i].label = "small cap";
+        strcpy(stock[i].label, "small cap");
     } else if (stock[i].index<=5707 && stock[i].index>=2854){
-        stock[i].label = "middle chip";
+        // stock[i].label = "middle chip";
+        strcpy(stock[i].label, "middle chip");
     } else if (stock[i].index<=8562 && stock[i].index>=5708){
-        stock[i].label = "blue chip";
+        // stock[i].label = "blue chip";
+        strcpy(stock[i].label, "blue chip");
     }
 
     printf("\n");
@@ -122,7 +125,7 @@ void view(){
     } else {
         printf("no\t| stock name\2t| stock code\2t| stock label\2t| stock price\2t|");
         
-        for (i=0; stock[10]; ++i){
+        for (i=0; i<10; ++i){
             printf("%d\t| %s\2t| %s\2t| %s\2t |%lf\2t|", i+1, stock[i].name, stock[i].index,
             stock[i].label, stock[i].price);
 
@@ -147,7 +150,7 @@ void delete(){
     } else {
         printf("no\t| stock name\2t| stock code\2t| stock label\2t| stock price\2t|");
         
-        for (i=0; stock[10]; ++i){
+        for (i=0; i<10; ++i){
             printf("%d\t| %s\2t| %s\2t| %s\2t |%lf\2t|", i+1, stock[i].name, stock[i].index,
             stock[i].label, stock[i].price);
 
