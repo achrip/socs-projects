@@ -76,3 +76,36 @@
 
 //     return 0;
 // }
+
+#include<stdio.h>
+int main(){
+	int tc;
+	int n,m;
+	scanf("%d",&tc);
+	for(int j=0;j<tc;j++){
+		scanf("%d %d",&m,&n);
+		printf("Case #%d: ",j+1);
+		long long int base = n;
+		if(m==1){
+			printf("%d\n",base%1000000000);
+			continue;
+		}
+		long long int tot=0;
+		for(int i=1;i<m;i++){
+			tot=(n-i);
+			int k=i;
+			while(k>0){
+				tot=tot%1000000000*(n-k)%1000000000+1;
+				k--;
+			}
+			base+=tot;
+			base%=1000000000;
+		}
+		printf("%d\n",base%1000000000);
+	}
+
+
+
+
+	return 0;
+}
