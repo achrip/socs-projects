@@ -17,24 +17,29 @@ int main(){
         int matrix [matrix_size][matrix_size];
         for (int j = 0; j < matrix_size; j++){
             for (int k = 0; k < matrix_size; k++){
-                scanf("%d", matrix[j][k]);
+                scanf("%d", &matrix[j][k]);
                 getchar();
             }
         }
 
         for (int j = 0; j < matrix_size; j++){
+            sum = 0; 
             for (int k = 0; k < matrix_size; k++){
-                sum = 0; 
                 sum += matrix[k][j];
             }
             final[i][j] = sum;
         }
     }
 
-    // for (int i = 0; i < rep; i++){
-    //     for (int j = 0; j < row[i]; j++){
-    //     printf("Case #%d: %d", i+1, final[i][j]);
-    //     }
-    //     printf("\n");
-    // }
+    for (int i = 0; i < rep; i++){
+        printf("Case #%d: ", i+1);
+        for (int j = 0; j < row[i]; j++){
+        printf("%d", final[i][j]);
+        if (j == row[i] - 1){
+            printf("\n");
+        } else {
+            printf(" ");
+        }
+        }
+    }
 }
