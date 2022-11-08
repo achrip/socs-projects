@@ -28,4 +28,6 @@ int main(){
         if (i == rep-1) printf("\n"); 
         else printf(" ");
     }
+
+    return 0; 
 }
