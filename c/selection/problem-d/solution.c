@@ -12,10 +12,10 @@ void main(){
         getchar();
         
         int tmp; 
-        if (male_froggie > female_froggie) tmp = male_froggie/female_froggie; 
-        else tmp = female_froggie / male_froggie; 
+        if ((male_froggie * female_froggie) % 2 == 0) tmp = 0; 
+        else tmp = 1; 
 
-        count[i]=tmp%2;
+        count[i]=tmp;
     }
 
     for (int i=0; i<rep; ++i){

@@ -16,7 +16,7 @@ void main(){
             printf("Sayur\n"); 
         }
     } else if (veggie>meat && veggie>egg){
-        printf("Sayuran\n");
+        printf("Sayur\n");
         if (meat>egg){
             printf("Daging\n"); 
             printf("Telur\n"); 
@@ -28,9 +28,9 @@ void main(){
         printf("Telur\n"); 
         if (meat>veggie){
             printf("Daging\n"); 
-            printf("Sayuran\n"); 
+            printf("Sayur\n"); 
         } else {
-            printf("Sayuran\n"); 
+            printf("Sayur\n"); 
             printf("Daging\n"); 
         }
     }
