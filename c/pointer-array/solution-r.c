@@ -26,4 +26,5 @@ int main() {
 
         printf("Case #%d: %s\n", i+1, string); 
     }
+    return 0; 
 }
