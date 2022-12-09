@@ -24,7 +24,7 @@ int main() {
 		for (int j = 0; j < patternCount; j++) {
 			int k = pattern[j]; 
 			int temp = pattern[j];
-			for (k; k <= rooms; ) {
+			for (k; k <= rooms; k += temp) {
 				if (k == 1) {
 					if (flag == 0) flag = 1; 
 					else flag = 0;
@@ -33,12 +33,11 @@ int main() {
 				else {
 					if (array[k - 1] == 0) array[k - 1] = 1;
 					else array[k - 1] = 0;
-					k += temp;
 				}
 			}
 		}
 		long int count = 0; 
-		printf("Case %d:", i + 1); 
+		printf("Case #%d:", i + 1); 
 		for (int j = 0; j < rooms; j++) {
 			if (flag == 0) {
 				if (array[j] != 0) count++; 
