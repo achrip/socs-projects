@@ -15,31 +15,34 @@ int main() {
 
         for (int j = 0; j < strlen(string); j++) {
             int temp;
-            if (string[j] >= 'A' && string[j] <= 'D') {
-                temp = string[j] - 'A'; 
-                output[j] = temp; 
-                string[j] = 'A'; 
+            switch (string[j]) {
+                case 'A' ... 'D':
+                    temp = string[j] - 'A'; 
+                    output[j] = (int)temp; 
+                    string[j] = 'A'; 
+                    break; 
+                case 'E' ... 'H':
+                    temp = string[j] - 'E'; 
+                    output[j] = (int)temp; 
+                    string[j] = 'E'; 
+                    break; 
+                case 'I' ... 'N':
+                    temp = string[j] - 'I'; 
+                    output[j] = (int)temp; 
+                    string[j] = 'I'; 
+                    break; 
+                case 'O' ... 'T':
+                    temp = string[j] - 'O'; 
+                    output[j] = (int)temp; 
+                    string[j] = 'O'; 
+                    break; 
+                case 'U' ... 'Z':
+                    temp = string[j] - 'U'; 
+                    output[j] = (int)temp; 
+                    string[j] = 'U'; 
+                    break; 
             }
-            else if (string[j] >= 'E' && string[j] <= 'H') {
-                temp = string[j] - 'E'; 
-                output[j] = temp; 
-                string[j] = 'E'; 
-            }
-            else if (string[j] >= 'I' && string[j] <= 'N'){
-                temp = string[j] - 'I'; 
-                output[j] = temp; 
-                string[j] = 'I'; 
-            }
-            else if (string[j] >= 'O' && string[j] <= 'T'){
-                temp = string[j] - 'O'; 
-                output[j] = temp; 
-                string[j] = 'O'; 
-            }
-            else if (string[j] >= 'U' && string[j] <= 'Z'){
-                temp = string[j] - 'U'; 
-                output[j] = temp; 
-                string[j] = 'U'; 
-            }
+            // somehow, OJ won't accept me using the decimals right off the bat -_-
         }
 
         printf("Case #%d:\n", i+1); 
