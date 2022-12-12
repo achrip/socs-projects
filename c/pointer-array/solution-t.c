@@ -15,32 +15,30 @@ int main() {
 
         for (int j = 0; j < strlen(string); j++) {
             int temp;
-            switch (string[j]) {
-                case 65 ... 68:
-                    temp = string[j] - 65; 
-                    output[j] = (int)temp; 
-                    string[j] = 'A'; 
-                    break; 
-                case 69 ... 72:
-                    temp = string[j] - 69; 
-                    output[j] = (int)temp; 
-                    string[j] = 'E'; 
-                    break; 
-                case 73 ... 78:
-                    temp = string[j] - 73; 
-                    output[j] = (int)temp; 
-                    string[j] = 'I'; 
-                    break; 
-                case 79 ... 84:
-                    temp = string[j] - 79; 
-                    output[j] = (int)temp; 
-                    string[j] = 'O'; 
-                    break; 
-                case 85 ... 89:
-                    temp = string[j] - 85; 
-                    output[j] = (int)temp; 
-                    string[j] = 'U'; 
-                    break; 
+            if (string[j] >= 'A' && string[j] <= 'D') {
+                temp = string[j] - 'A'; 
+                output[j] = temp; 
+                string[j] = 'A'; 
+            }
+            else if (string[j] >= 'E' && string[j] <= 'H') {
+                temp = string[j] - 'E'; 
+                output[j] = temp; 
+                string[j] = 'E'; 
+            }
+            else if (string[j] >= 'I' && string[j] <= 'N'){
+                temp = string[j] - 'I'; 
+                output[j] = temp; 
+                string[j] = 'I'; 
+            }
+            else if (string[j] >= 'O' && string[j] <= 'T'){
+                temp = string[j] - 'O'; 
+                output[j] = temp; 
+                string[j] = 'O'; 
+            }
+            else if (string[j] >= 'U' && string[j] <= 'Z'){
+                temp = string[j] - 'U'; 
+                output[j] = temp; 
+                string[j] = 'U'; 
             }
         }
 
