@@ -23,11 +23,22 @@ int main() {
 		long long int perimeter = 0; 
 		long long int area = 0;
 
-		for (int i = 0; i < size; i++) {
-			area += 4 * array[i];
-			if (i < 1 || i > size - 2) perimeter += 2 * array[i];
-			if (array[i] > array[i-1] && (i-1) >= 0) perimeter += (array[i] - array[i-1]) * 2;
-			if (array[i] > array[i+1] && (i+1) <= size-1) perimeter += (array[i] - array[i+1]) * 2;
+		for (int j = 0; j < size; j++) {
+			area += 4 * array[j];
+
+			if (j < 1) {
+				perimeter += 2 * array[j]; 
+				if (array[j] > array[j+1]) perimeter += (array[j] - array[j+1]) * 2;
+			}
+			else if (j > size - 2) {
+				perimeter += 2 * array[j]; 
+				if (array[j] > array[j-1]) perimeter += (array[j] - array[j-1]) * 2;
+			}
+			else {
+				if (array[j] > array[j-1] && (j-1) >= 0) perimeter += (array[j] - array[j-1]) * 2;
+				if (array[j] > array[j+1] && (j+1) <= size-1) perimeter += (array[j] - array[j+1]) * 2;
+			}
+
 		}
 
 		perimeter += 4 * size; 
