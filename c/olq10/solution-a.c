@@ -8,18 +8,20 @@ int main() {
   getchar(); 
 
   for (int i = 0; i < cases; i++) {
-    char string[255]; 
-    scanf("%[^\n]\n", string); 
+    char string[1001]; 
+    scanf("%[^\n]", string);
+    getchar();  
 
     printf("Case #%d: ", (i +1)); 
     
     int length = strlen(string);
     for (int j = 0; j < length; j++) {
-      if (string[j] == 'a' || string[j] == 'A') continue; 
-      if (string[j] == 'i' || string[j] == 'I') continue;
-      if (string[j] == 'u' || string[j] == 'U') continue; 
-      if (string[j] == 'e' || string[j] == 'E') continue; 
-      if (string[j] == 'o' || string[j] == 'O') continue;  
+      if (string[j] == 'a' || string[j] == 'A'||
+          string[j] == 'i' || string[j] == 'I'||
+          string[j] == 'u' || string[j] == 'U'||
+          string[j] == 'e' || string[j] == 'E'||
+          string[j] == 'o' || string[j] == 'O') continue; 
+
       printf("%c", string[j]);
     }
     printf("\n");  
